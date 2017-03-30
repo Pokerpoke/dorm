@@ -1,0 +1,72 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<meta name="theme-color" content="#607d8b">
+
+	<!--Import Google Icon Font-->
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="{% static "css/materialize.min.css" %}" media="screen,projection " />
+
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport " content="width=device-width, initial-scale=1.0 " />
+	<title>智能宿舍</title>
+</head>
+
+<body>
+	<!--Import jQuery before materialize.js-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="{% static "js/materialize.min.js" %}"></script>
+
+	<head>
+		<div class="navbar-fixed">
+			<nav class="blue-grey darken-1">
+				<div class="nav-wrapper container">
+					<a href="/index/" class="brand-logo">Dorm</a>
+					<ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li><a href="">登陆</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</head>
+
+	<div class="row container">
+		<div class="col s12 m12 l12">
+			<div class="card">
+				<table class="highlight container centered">
+					<thead>
+						<tr>
+							<th>设备ID</th>
+							<th>设备种类</th>
+							<th>状态</th>
+							<th>房间号</th>
+							<th>路由表</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for dorm in dorm %}
+						<tr>
+							<td>{{ dorm.devID }}</td>
+							<td>{{ dorm.devName }}</td>
+							<td>{{ dorm.devStatus }}</td>
+							<td>{{ dorm.roomName }}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

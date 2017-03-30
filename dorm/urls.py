@@ -17,10 +17,11 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 from index import views as index_views
+from query import views as query_views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^', index_views.index, name='index'),
     url(r'^index/', index_views.index, name='index'),
+    url(r'^queryall/', query_views.queryall, name='queryall'),
 
 ]

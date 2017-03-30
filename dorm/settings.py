@@ -40,6 +40,7 @@ INSTALLED_APPS = (
 
     'index',
     'dormdb',
+    'query',
 )
 
 MIDDLEWARE_CLASSES = (
