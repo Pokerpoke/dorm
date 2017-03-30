@@ -1,0 +1,38 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<!--Import Google Icon Font-->
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="{% static "css/materialize.min.css" %}" media="screen,projection " />
+
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport " content="width=device-width, initial-scale=1.0 " />
+	<title>智能宿舍</title>
+</head>
+
+<body>
+	<!--Import jQuery before materialize.js-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="{% static "js/materialize.min.js" %}"></script>
+
+	<nav>
+		<div class="nav-wrapper">
+			<a href="" class="brand-logo">Dorm</a>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a href="">Log in</a></li>
+			</ul>
+		</div>
+	</nav>
+
+</body>
+
+</html>
