@@ -18,7 +18,7 @@
 
 	<!--Let browser know website is optimized for mobile-->
 	<meta name="viewport " content="width=device-width, initial-scale=1.0 " />
-	<title>智能宿舍</title>
+	<title>{% block title %}{% endblock %}</title>
 </head>
 
 <body>
@@ -26,47 +26,20 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="{% static "js/materialize.min.js" %}"></script>
 
-	<head>
+	<header>
 		<div class="navbar-fixed">
-			<nav class="blue-grey darken-1">
+			<nav class="top-nav blue-grey darken-1">
 				<div class="nav-wrapper container">
 					<a href="/index/" class="brand-logo">Dorm</a>
-					<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<ul class="right hide-on-med-and-down">
 						<li><a href="">登陆</a></li>
 					</ul>
 				</div>
 			</nav>
 		</div>
-	</head>
+	</header>
 
-	<div class="row container">
-		<div class="col s12 m12 l12">
-			<div class="card">
-				<table class="highlight container centered">
-					<thead>
-						<tr>
-							<th>设备ID</th>
-							<th>设备种类</th>
-							<th>状态</th>
-							<th>时间</th>
-							<th>路由表</th>
-						</tr>
-					</thead>
-					<tbody>
-						{% for dorm in dorm %}
-						<tr>
-							<td>{{ dorm.devID }}</td>
-							<td>{{ dorm.devName }}</td>
-							<td>{{ dorm.devStatus }}</td>
-							<td>{{ dorm.time }}</td>
-							<td>{{ dorm.relay }}</td>
-						</tr>
-						{% endfor %}
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
+	{% block content %}{% endblock %}
 
 </body>
 
