@@ -4,7 +4,6 @@ test sqlite3
 """
 
 import sqlite3
-import time
 
 
 def main():
@@ -18,13 +17,12 @@ def main():
     # execute command
     t = 2
     i = 3
-    time_now = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     cursor.execute("insert into dormdb_dorm (devID,\
-                    devName,devStatus,roomName,nRelays,relay1,relay2,\
+                    devName,devStatus,nRelays,relay1,relay2,\
                     relay3,relay4,relay5,time)\
                     values (" + str(t) +
                    "," + str(t) + "," + str(t) + "," + str(t) +
-                   "," + str(t) + "," + str(t) + "," + str(t) +
+                   "," + str(t)  + "," + str(t) +
                    "," + str(t) + "," + str(t) + "," +
                    str(i) + ", datetime('now','localtime'))")
     cursor.close()

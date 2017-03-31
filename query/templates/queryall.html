@@ -48,7 +48,7 @@
 							<th>设备ID</th>
 							<th>设备种类</th>
 							<th>状态</th>
-							<th>房间号</th>
+							<th>时间</th>
 							<th>路由表</th>
 						</tr>
 					</thead>
@@ -58,7 +58,8 @@
 							<td>{{ dorm.devID }}</td>
 							<td>{{ dorm.devName }}</td>
 							<td>{{ dorm.devStatus }}</td>
-							<td>{{ dorm.roomName }}</td>
+							<td>{{ dorm.time }}</td>
+							<td>{{ dorm.relay }}</td>
 						</tr>
 						{% endfor %}
 					</tbody>

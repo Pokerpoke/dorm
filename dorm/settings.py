@@ -25,7 +25,7 @@ SECRET_KEY = '!fm$&^0)o0$z#dc(jy6#h@s67)fdbw+^&w(a_r7s+rd&5nqxrw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.199.249']
+ALLOWED_HOSTS = ['192.168.199.249','192.168.199.144']
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'index',
     'dormdb',
     'query',
+    'command',
 )
 
 MIDDLEWARE_CLASSES = (
