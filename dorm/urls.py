@@ -23,5 +23,4 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^index/', index_views.index, name='index'),
     url(r'^queryall/', query_views.queryall, name='queryall'),
-
 ]
