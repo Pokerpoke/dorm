@@ -13,7 +13,7 @@
 </div>
 {% endblock mainbody %}{% endcomment %}
 
-{% block card %}
+{% block card_content %}
 {% for card in cards %}
 <div class="col s12 m6 l4">
 	<div class="card {{ card.color }} darken-1 hoverable">
@@ -28,4 +28,22 @@
 	</div>
 </div>
 {% endfor %}
-{% endblock card %}
+{% endblock card_content %}
+
+{% block card_form %}
+<div class="col s12 m6 l4">
+	<div class="card {{ formData.color }} darken-1 hoverable">
+		<div class="card-content">
+			<span class="card-title">{{ formData.title }}</span>
+			<p>{{ formData.content }}</p>
+		</div>
+		<div class="card-action {{ formData.color }} darken-2">
+			<form action="/queryall/" method="post">
+				{% csrf_token %}
+				{{ form }}
+				<input type="submit" class="btn waves-effect waves-light" value="Submit" />
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock card_form %}

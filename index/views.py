@@ -21,4 +21,12 @@ def index(request):
     cards = []
     cards.append(card1)
     cards.append(card2)
-    return render(request, 'index.html', locals())
+    formData = {
+        'title': '查询',
+        'color': 'white',
+        'content': 'Query all data from database.',
+    }
+    return render(request, 'index.html', {
+        'form': form,
+        'formData': formData,
+        'cards': cards})
