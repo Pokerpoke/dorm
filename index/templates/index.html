@@ -1,7 +1,31 @@
-{% extends "base.html" %} 
+{% extends "base_with_cards.html" %} 
 
 {% block title %} 智能宿舍 {% endblock %}
 
-{% block content %}
+{% comment %}{% block mainbody %}
+<form action="/queryall/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" class="btn waves-effect waves-light" value="Submit" />
+</form>
 
-{% endblock content %}
+<div class="row container">
+</div>
+{% endblock mainbody %}{% endcomment %}
+
+{% block card %}
+{% for card in cards %}
+<div class="col s12 m6 l4">
+	<div class="card {{ card.color }} darken-1 hoverable">
+		<div class="card-content white-text">
+			<span class="card-title">{{ card.title }}</span>
+			<p>{{ card.content }}</p>
+		</div>
+		<div class="card-action {{ card.color }} darken-2">
+			<a href="{{ card.action1.url }}" class="white-text">{{ card.action1.name }}</a>
+			<a href="{{ card.action2.url }}" class="white-text">{{ card.action2.name }}</a>
+		</div>
+	</div>
+</div>
+{% endfor %}
+{% endblock card %}
