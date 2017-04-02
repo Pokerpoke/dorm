@@ -9,7 +9,7 @@ def queryall(request):
     """
     Query all data from dormdb_dorm database
     """
-    dorm = Dorm.objects.all().order_by('-time')
+    dorm = Dorm.objects.order_by('-time')[:10]
     return render(request, 'queryall.html', {'dorm': dorm})
 
 def get_dev(request):
@@ -27,6 +27,5 @@ def get_dev(request):
     # if a GET (or any other method) we'll create a blank form
     else:
         form = DevRoomForm()
-
-    return render(request, 'index.html', {'form': form})
+        return render(request, 'index.html', {'form': form})
     
