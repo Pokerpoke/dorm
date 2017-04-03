@@ -20,3 +20,10 @@ class Dorm(models.Model):
         """
         if self.nRelays == 1:
             pass
+
+    # def deleteAll(self):
+    #     """
+    #     Delete all data.
+    #     """
+    #     self.objects.raw("delete from 'dormdb_dorm'")
+    #     self.objects.raw("vacumm")

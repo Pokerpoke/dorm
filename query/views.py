@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 
 from dormdb.models import Dorm
 
@@ -7,10 +8,11 @@ from dormdb.models import Dorm
 
 def queryall(request):
     """
-    Query all data from dormdb_dorm database
+    Query all data from dormdb_dorm database.
     """
     dorm = Dorm.objects.order_by('-time')[:10]
     return render(request, 'queryall.html', {'dorm': dorm})
+
 
 def get_dev(request):
     # if this is a POST request we need to process the form data
@@ -28,4 +30,11 @@ def get_dev(request):
     else:
         form = DevRoomForm()
         return render(request, 'index.html', {'form': form})
-    
+
+
+def deletedata(request):
+    """
+    Delete all data.
+    """
+    Dorm.objects.all().delete()
+    return redirect('/queryall/')
