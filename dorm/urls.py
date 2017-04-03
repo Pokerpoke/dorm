@@ -21,6 +21,7 @@ from query import views as query_views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', index_views.index, name='index'),
     url(r'^index/', index_views.index, name='index'),
     url(r'^queryall/', query_views.queryall, name='queryall'),
 ]

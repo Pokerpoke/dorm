@@ -11,11 +11,6 @@ class Dorm(models.Model):
     roomName = models.PositiveIntegerField(null=True)
     nRelays = models.PositiveIntegerField(null=True)
     relay = models.CharField(max_length=30, null=True)
-    relay1 = models.PositiveIntegerField(null=True)
-    relay2 = models.PositiveIntegerField(null=True)
-    relay3 = models.PositiveIntegerField(null=True)
-    relay4 = models.PositiveIntegerField(null=True)
-    relay5 = models.PositiveIntegerField(null=True)
     # time = models.DateTimeField(default=timezone.now)
     time = models.DateTimeField(auto_now=True, null=True)
 

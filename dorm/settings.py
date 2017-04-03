@@ -24,6 +24,8 @@ SECRET_KEY = '!fm$&^0)o0$z#dc(jy6#h@s67)fdbw+^&w(a_r7s+rd&5nqxrw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# DEBUG = False
+TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = ['192.168.199.144', '192.168.199.249', '192.168.199.205']
 
@@ -60,7 +62,7 @@ ROOT_URLCONF = 'dorm.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [''],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -108,8 +110,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static/'),
-)
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR + '/index/static'),
+# )
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
