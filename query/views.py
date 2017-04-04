@@ -1,4 +1,6 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import render
+from django.shortcuts import redirect
 
 from dormdb.models import Dorm
 
@@ -29,3 +31,6 @@ def get_dev(request):
         form = DevRoomForm()
         return render(request, 'index.html', {'form': form})
     
+def deletedata(request):
+    Dorm.objects.all().delete()
+    return redirect('/queryall')

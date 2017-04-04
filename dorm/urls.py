@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^$', index_views.index, name='index'),
     url(r'^index/', index_views.index, name='index'),
     url(r'^queryall/', query_views.queryall, name='queryall'),
+    url(r'^deletedata/', query_views.deletedata, name='deletedata'),
 ]
