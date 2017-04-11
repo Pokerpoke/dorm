@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # -*- coding:utf-8 -*-
-=======
-# -*- coding: utf-8 -*-
->>>>>>> b5214b60a1b25e519f145c0653fb47aa98f1203b
 from django.shortcuts import render
 from django.shortcuts import redirect
 
@@ -67,8 +63,8 @@ def dorm_login(request):
             if user is not None:
                 login(request, user)
                 # Redirect to a success page.
-                return redirect(request, 'index.html',
-                                {'title': username})
+                return render(request, 'login.html',
+                              {'title': username})
             else:
                 # Return an 'invalid login' error message.
                 error = '用户名或密码错误!'
