@@ -1,4 +1,10 @@
 .vs/
 collected_static/
 *.log
+<<<<<<< HEAD
 *.pyc
+=======
+log/
+*.pyc
+
+>>>>>>> b5214b60a1b25e519f145c0653fb47aa98f1203b

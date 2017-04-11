@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # -*- coding:utf-8 -*-
+=======
+# -*- coding: utf-8 -*-
+>>>>>>> b5214b60a1b25e519f145c0653fb47aa98f1203b
 from django.shortcuts import render
 from django.shortcuts import redirect
 

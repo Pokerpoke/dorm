@@ -24,6 +24,10 @@ urlpatterns = [
     url(r'^$', index_views.index, name='index'),
     url(r'^index/', index_views.index, name='index'),
     url(r'^queryall/', query_views.queryall, name='queryall'),
+<<<<<<< HEAD
     url(r'^login/', index_views.dorm_login, name='login'),
     url(r'^register/', index_views.dorm_register, name='register'),
+=======
+    url(r'^deletedata/', query_views.deletedata, name='deletedata'),
+>>>>>>> b5214b60a1b25e519f145c0653fb47aa98f1203b
 ]

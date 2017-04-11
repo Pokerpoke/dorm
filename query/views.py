@@ -1,5 +1,10 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import render
+<<<<<<< HEAD
 from django.contrib.auth.decorators import login_required
+=======
+from django.shortcuts import redirect
+>>>>>>> b5214b60a1b25e519f145c0653fb47aa98f1203b
 
 from dormdb.models import Dorm
 
@@ -30,3 +35,6 @@ def get_dev(request):
         form = DevRoomForm()
         return render(request, 'index.html', {'form': form})
     
+def deletedata(request):
+    Dorm.objects.all().delete()
+    return redirect('/queryall')

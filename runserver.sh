@@ -1,9 +1,10 @@
 #!/bin/bash
+# python manage.py makemigrations
+# python manage.py migrate
+# python manage.py collectstatic
 
-if [! -f  /etc/nginx/conf.d/dorm_nginx.conf ];then
-sudo cp dorm_nginx.conf /et/nginx/conf.d/dorm_nginx.conf
-fi
+# sudo nginx -c /home/jiang/dorm/nginx_conf/dorm_nginx.conf
 
-sudo /etc/init.d/nginx reload
+uwsgi --ini dorm_uwsgi.ini &
 
-uwsgi --ini dorm_uwsgi.ini
+sudo python serialrecv.py
