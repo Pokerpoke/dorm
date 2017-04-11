@@ -38,7 +38,7 @@
 			<p>{{ formData.content }}</p>
 		</div>
 		<div class="card-action {{ formData.color }} darken-2">
-			<form action="/queryall/" method="post">
+			<form action="{{ formData.url }}" method="post">
 				{% csrf_token %}
 				{{ form }}
 				<input type="submit" class="btn waves-effect waves-light" value="Submit" />

@@ -1,10 +1,11 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 from dormdb.models import Dorm
 
 # Create your views here.
 
-
+@login_required(login_url='/login/')
 def queryall(request):
     """
     Query all data from dormdb_dorm database

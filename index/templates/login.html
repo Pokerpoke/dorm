@@ -1,0 +1,54 @@
+{% extends "base.html" %} 
+{% block title %}
+	{% if title %}
+	{{ title }}
+	{% else %}
+	智能宿舍
+	{% endif %}
+{% endblock title %}
+{% block header %}
+<header>
+	<div class="navbar-fixed">
+		<nav class="top-nav blue-grey darken-1">
+			<div class="nav-wrapper container">
+				<a href="/" class="brand-logo">Dorm</a>
+			</div>
+		</nav>
+	</div>
+</header>
+{% endblock header %}
+
+{% block mainbody %}
+
+<div class="row container">
+	{% comment %}<form action="/login/" method="POST">
+		{% csrf_token %} {{ form }}
+		<input type="submit" class="btn waves-effect waves-light" value="提交" />
+	</form>{% endcomment %}
+	<div class="col s12 m6 l4 offset-l4 offset-m3">
+		<div class="card white middle darken-2 hoverable">
+			<div class="card-content container">
+				<div class="row">
+					<span class="card-title center">{{ title }}</span>
+				</div>
+			</div>
+			<div class="card-action">
+				{% if error %}
+					<div class="red-text center">{{ error }}</div>
+				{% endif %}
+					<form action="{{ url }}" method="POST">
+						{% csrf_token %} 
+						{{ form }}
+						{% if title == '登陆' %}
+						<input type="submit" class="btn waves-effect waves-light" value="登陆" />
+						{% elif title == '注册' %}
+						<input type="submit" class="btn waves-effect waves-light" value="确认" />
+						{% endif %}
+						<a href="/register/" class="btn waves-effect waves-light right">注册</a>
+					</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock mainbody %}

@@ -24,4 +24,6 @@ urlpatterns = [
     url(r'^$', index_views.index, name='index'),
     url(r'^index/', index_views.index, name='index'),
     url(r'^queryall/', query_views.queryall, name='queryall'),
+    url(r'^login/', index_views.dorm_login, name='login'),
+    url(r'^register/', index_views.dorm_register, name='register'),
 ]

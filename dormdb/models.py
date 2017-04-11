@@ -5,6 +5,9 @@ import django.utils.timezone as timezone
 
 
 class Dorm(models.Model):
+    """
+    Device status database.
+    """
     devID = models.PositiveIntegerField(null=True)
     devName = models.CharField(max_length=4, null=True)
     devStatus = models.PositiveIntegerField(null=True)
@@ -14,9 +17,18 @@ class Dorm(models.Model):
     # time = models.DateTimeField(default=timezone.now)
     time = models.DateTimeField(auto_now=True, null=True)
 
-    def getRouter(self):
+    def get_router(self):
         """
         Get router.
         """
         if self.nRelays == 1:
             pass
+
+
+# class User(models.Model):
+#     """
+#     User and password database.
+#     """
+#     username = models.CharField(max_length=100, unique=True)
+#     password = models.CharField(max_length=100)
+#     roomname = models.PositiveIntegerField(null=True)

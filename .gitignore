@@ -1,3 +1,4 @@
 .vs/
 collected_static/
 *.log
+*.pyc
